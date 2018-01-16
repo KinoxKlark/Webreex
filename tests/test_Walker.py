@@ -1,5 +1,5 @@
 import unittest
-import Walker
+from Walker import Walker
 
 class TestWalker(unittest.TestCase) :
 
