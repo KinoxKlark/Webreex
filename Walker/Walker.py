@@ -7,10 +7,13 @@ class WalkerException(Exception):
         return self.msg
 
 class Walker(ABC):
-    """A Walker object browse a website and extracts the maximum of page hi can"""
+    """A Walker object browse a website and extracts the maximum number of page hi can"""
 
     def __init__(self, config):
-
+        """
+        Construct a Walker
+        :param config: A configuration object that encapsulate 
+        """
         self.urls = []
         self.config = {
             'mask': '',         # The mask for validating an url
