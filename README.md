@@ -1,7 +1,7 @@
 # Webreex
 Web relations explorer
 
-## Reading 
+## Reading
 
 https://fr.wikipedia.org/wiki/TF-IDF
 
@@ -16,4 +16,6 @@ https://fr.wikipedia.org/wiki/Mod%C3%A8le_de_Markov_cach%C3%A9
  - How to deal with incremental change and clustering ?
  - Who let the dogs out ?
 
+## UML Diagram
 
+![UML Diagram](uml_diagram.png)
