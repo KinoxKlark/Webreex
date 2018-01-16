@@ -18,4 +18,4 @@ https://fr.wikipedia.org/wiki/Mod%C3%A8le_de_Markov_cach%C3%A9
 
 ## UML Diagram
 
-![UML Diagram](uml_diagram.png)
+![UML Diagram](docs/uml_diagram.png)
