@@ -12,7 +12,7 @@ class Walker(ABC):
     def __init__(self, config):
         """
         Construct a Walker
-        :param config: A configuration object that encapsulate 
+        :param config: A configuration object that encapsulate
         """
         self.urls = []
         self.config = {
@@ -26,13 +26,13 @@ class Walker(ABC):
             self.config.update(value)
         object.__setattr__(self, name,value)
 
-    def setConfig(self, config):
+    def set_config(self, config):
         """Override the config of the walker
 
         :param config A configuration dictionary"""
         self.config.update(config)
 
-    def startWalk(self, start_url):
+    def start_walk(self, start_url):
         """Start walking from here"""
         if (not self.addUrl(start_url)):
             raise WalkerException('The starting url is invalid. Does it match the mask ?')
@@ -43,7 +43,7 @@ class Walker(ABC):
         """Walk around while ther is pages or while above max depth"""
         pass
 
-    def walkTo(self, url):
+    def walk_to(self, url):
         """Walk to a specific url, manipule the page and get all nexts urls
 
         :return boolean True if the page existe and false if there is a problem"""
@@ -54,12 +54,12 @@ class Walker(ABC):
         # 4) manage depth
         pass
 
-    def addUrls(self, urls = []):
+    def add_urls(self, urls = []):
         """Add multiple urls to the list"""
         for url in urls:
             self.addUrl(url)
 
-    def addUrl(self, url):
+    def add_url(self, url):
         """Add a url to the list
         :param url The url to add to the list
         :return boolean true if the url has been added"""
@@ -68,19 +68,19 @@ class Walker(ABC):
             return True
         return False
 
-    def removeUrls(self, urls = []):
+    def remove_urls(self, urls = []):
         """Remove multiple urls from the list"""
         for url in urls:
             self.removeUrl(url)
 
-    def removeUrl(self, url):
+    def remove_url(self, url):
         """Eemove a url from the list"""
         try:
             del self.urls[self.urls.index(url)]
         except ValueError as err:
             pass
 
-    def urlIsValid(self, url):
+    def urlIs_valid(self, url):
         mask = self.config['mask']
         # todo check mask
         return True
