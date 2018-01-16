@@ -34,7 +34,7 @@ class Walker(ABC):
 
     def start_walk(self, start_url):
         """Start walking from here"""
-        if (not self.addUrl(start_url)):
+        if (not self.add_url(start_url)):
             raise WalkerException('The starting url is invalid. Does it match the mask ?')
         self.walk()
 
@@ -57,13 +57,13 @@ class Walker(ABC):
     def add_urls(self, urls = []):
         """Add multiple urls to the list"""
         for url in urls:
-            self.addUrl(url)
+            self.add_url(url)
 
     def add_url(self, url):
         """Add a url to the list
         :param url The url to add to the list
         :return boolean true if the url has been added"""
-        if (url not in self.urls) and self.urlIsValid(url):
+        if (url not in self.urls) and self.url_is_valid(url):
             self.urls.append(url)
             return True
         return False
@@ -71,7 +71,7 @@ class Walker(ABC):
     def remove_urls(self, urls = []):
         """Remove multiple urls from the list"""
         for url in urls:
-            self.removeUrl(url)
+            self.remove_url(url)
 
     def remove_url(self, url):
         """Eemove a url from the list"""
@@ -80,7 +80,7 @@ class Walker(ABC):
         except ValueError as err:
             pass
 
-    def urlIs_valid(self, url):
+    def url_is_valid(self, url):
         mask = self.config['mask']
         # todo check mask
         return True
