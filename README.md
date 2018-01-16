@@ -16,5 +16,6 @@ https://fr.wikipedia.org/wiki/Mod%C3%A8le_de_Markov_cach%C3%A9
  - How to deal with incremental change and clustering ?
  - Who let the dogs out ?
 
+## UML Diagram
 
-## Test
+![UML Diagram](docs/uml_diagram.png)
