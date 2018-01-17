@@ -4,6 +4,7 @@ class TreeNode:
     A node can only appear once in the tree
     A node can not have one of his parents in his children
     """
+
     def __init__(self, value):
         self.value = value
         self.parent = None
@@ -16,9 +17,9 @@ class TreeNode:
         :return self
         """
         if child is self:
-            raise Exception('You should not attach a child to himself')
+            raise TreeNodeException('You should not attach a child to himself')
         if self.has_parent(child):
-            raise Exception('You should not attach a parent to his child')
+            raise TreeNodeException('You should not attach a parent to his child')
         if child.parent is not None:
             child.parent.children.remove(child)
         child.parent = self
@@ -46,3 +47,11 @@ class TreeNode:
                 return True
             p = p.parent
         return False
+
+
+class TreeNodeException(Exception):
+    def __init__(self, msg):
+        self.msg = msg
+
+    def __str__(self):
+        return self.msg
